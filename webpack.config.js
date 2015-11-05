@@ -3,12 +3,17 @@ module.exports = {
   output: {
     filename: "public/bundle.js"
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel'
+        loader: 'babel',
+        query: {
+          cacheDirectory: true,
+          presets: ['react']
+        }
       }
     ]
   }
