@@ -6,15 +6,15 @@ module.exports = {
   devtool: 'source-map',
   module: {
     loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
-          cacheDirectory: true,
-          presets: ['react']
-        }
+    {
+      test: /\.jsx?$/,
+      exclude: /(node_modules|bower_components)/,
+      loader: 'babel',
+      query: {
+        cacheDirectory: true,
+        presets: ['react', 'es2015']
       }
+    }
     ]
   }
 };
