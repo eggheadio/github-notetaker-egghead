@@ -1,7 +1,13 @@
 var React = require('react');
-var Router = require('react-router');
+var ReactDOM = require('react-dom');
+var Router = require('react-router').Router;
 var routes = require('./config/routes');
+import { hashHistory } from 'react-router'
+// `Router` no longer defaults the history prop to hash history. 
+//  Please use the `hashHistory` singleton instead. 
+//  http://tiny.cc/router-defaulthistory
 
-Router.run(routes, function(Root){
-  React.render(<Root />, document.getElementById('app'));
-});
+ReactDOM.render(
+  <Router history={hashHistory}>{routes}</Router>,
+  document.getElementById('app')
+  )
